@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DimKava — Service portfolio</title>
+  <title>DimKava — Service collection</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -11,17 +11,21 @@
     <div class="header-top-wrapper">
       <div class="main-container">
         <div class="header-top">
-          <a href="/" class="site-brand">DimKava</a>
+          <nav class="lang-switcher" aria-label="Language">
+            <a href="#" class="lang-btn is-active" data-lang="en" aria-current="true">EN</a>
+            <a href="#" class="lang-btn" data-lang="ru">RU</a>
+            <a href="#" class="lang-btn" data-lang="ka">GE</a>
+          </nav>
         </div>
       </div>
     </div>
     <div class="main-container">
       <div class="header-bottom-inner">
-        <a href="/" class="site-logo">DimKava</a>
+        <a href="/" class="site-logo"><img src="DimKavaLogo.png" alt="DimKava" class="logo-img"></a>
         <nav class="menu--main" aria-label="Main navigation">
           <ul class="menu">
-            <li class="menu-item"><a href="#services" class="menu-item-link">Services</a></li>
-            <li class="menu-item"><a href="#about" class="menu-item-link">About</a></li>
+            <li class="menu-item"><a href="#services" class="menu-item-link" data-i18n="nav.services">Services</a></li>
+            <li class="menu-item"><a href="#about" class="menu-item-link" data-i18n="nav.about">About</a></li>
           </ul>
         </nav>
       </div>
@@ -31,35 +35,62 @@
   <main>
     <section class="hero">
       <div class="main-container">
-        <h1 class="lead-in-headline">Service portfolio</h1>
-        <p class="hero-description">A catalogue of tools and applications. Pick a service and follow the link.</p>
+        <h1 class="lead-in-headline" data-i18n="hero.title">Service collection</h1>
+        <p class="hero-description" data-i18n="hero.desc">A catalogue of tools and applications. Pick a service and follow the link.</p>
       </div>
     </section>
 
     <section class="services-section" id="services">
       <div class="main-container">
-        <h2 class="block-title">Services</h2>
+        <h2 class="block-title" data-i18n="section.services">Services</h2>
         <div class="service-grid">
-          <!-- Placeholder cards — replace with real services later -->
           <article class="service-card">
             <div class="service-card-content">
-              <h3 class="service-title"><a href="#">Service name</a></h3>
-              <p class="service-description">Brief description. What the service does and what it is for. Add your text here.</p>
-              <a href="#" class="button button--primary service-link">Go</a>
+              <h3 class="service-title"><a href="https://education-site-production.up.railway.app/" target="_blank" rel="noopener noreferrer" data-i18n="service.edu.title">Education Portal</a></h3>
+              <p class="service-description" data-i18n="service.edu.desc">Training programs, job instructions, coffee knowledge, business values. For employees and candidates in four languages (RU, UA, EN, GE).</p>
+              <a href="https://education-site-production.up.railway.app/" class="button button--primary service-link" target="_blank" rel="noopener noreferrer" data-i18n="btn.open">Open</a>
             </div>
           </article>
           <article class="service-card">
             <div class="service-card-content">
-              <h3 class="service-title"><a href="#">Second service</a></h3>
-              <p class="service-description">Description of the second service. Fill in later.</p>
-              <a href="#" class="button button--primary service-link">Go</a>
+              <h3 class="service-title"><a href="https://cooperative-stillness-production.up.railway.app/comparison/" target="_blank" rel="noopener noreferrer" data-i18n="service.price-comp.title">Competitor Price Monitor</a></h3>
+              <p class="service-description" data-i18n="service.price-comp.desc">Price comparison table: our site vs competitors. Products matched by name, prices side by side for quick analysis.</p>
+              <a href="https://cooperative-stillness-production.up.railway.app/comparison/" class="button button--primary service-link" target="_blank" rel="noopener noreferrer" data-i18n="btn.open">Open</a>
             </div>
           </article>
           <article class="service-card">
             <div class="service-card-content">
-              <h3 class="service-title"><a href="#">Third service</a></h3>
-              <p class="service-description">Another service with a description.</p>
-              <a href="#" class="button button--primary service-link">Go</a>
+              <h3 class="service-title"><a href="https://prices-monitoring-scrappers-production.up.railway.app/sources" target="_blank" rel="noopener noreferrer" data-i18n="service.price-scrap.title">Price Monitoring (Scrapers)</a></h3>
+              <p class="service-description" data-i18n="service.price-scrap.desc">Our and competitors' prices in one place. Data from our WordPress API and competitor sites via scraping. New design, updated features.</p>
+              <a href="https://prices-monitoring-scrappers-production.up.railway.app/sources" class="button button--primary service-link" target="_blank" rel="noopener noreferrer" data-i18n="btn.open">Open</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card-content">
+              <h3 class="service-title"><a href="https://web-interface-for-granite-api-production.up.railway.app/" target="_blank" rel="noopener noreferrer" data-i18n="service.granite.title">Granite Sales Dashboard</a></h3>
+              <p class="service-description" data-i18n="service.granite.desc">Sales and inventory from DB. Loads data from Granite: sales by point of sale (coffee kg, cups, amounts), stock levels.</p>
+              <a href="https://web-interface-for-granite-api-production.up.railway.app/" class="button button--primary service-link" target="_blank" rel="noopener noreferrer" data-i18n="btn.open">Open</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card-content">
+              <h3 class="service-title"><a href="https://online-sales-statistic-production.up.railway.app/" target="_blank" rel="noopener noreferrer" data-i18n="service.online-stats.title">Online Sales Statistics</a></h3>
+              <p class="service-description" data-i18n="service.online-stats.desc">Online sales analytics and event calendar. Data from Google Sheets visualised in charts and comparisons.</p>
+              <a href="https://online-sales-statistic-production.up.railway.app/" class="button button--primary service-link" target="_blank" rel="noopener noreferrer" data-i18n="btn.open">Open</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card-content">
+              <h3 class="service-title"><a href="https://woocommerce-api-connector-production.up.railway.app/" target="_blank" rel="noopener noreferrer" data-i18n="service.woo.title">WooCommerce → LILU Sync</a></h3>
+              <p class="service-description" data-i18n="service.woo.desc">Orders from DimKava.ge in one place. View, filter, analyse. Sync orders to LILU with one click.</p>
+              <a href="https://woocommerce-api-connector-production.up.railway.app/" class="button button--primary service-link" target="_blank" rel="noopener noreferrer" data-i18n="btn.open">Open</a>
+            </div>
+          </article>
+          <article class="service-card">
+            <div class="service-card-content">
+              <h3 class="service-title"><a href="https://docs.google.com/spreadsheets/d/1l60r1Rt83mALa2Hd3yViU8aOglSGlUPyeJQ39n084Xo/edit?gid=1132847113#gid=1132847113" target="_blank" rel="noopener noreferrer" data-i18n="service.sheet.title">Online Sales Spreadsheet</a></h3>
+              <p class="service-description" data-i18n="service.sheet.desc">Primary log of online sales. Raw data source for analytics and reporting.</p>
+              <a href="https://docs.google.com/spreadsheets/d/1l60r1Rt83mALa2Hd3yViU8aOglSGlUPyeJQ39n084Xo/edit?gid=1132847113#gid=1132847113" class="button button--secondary service-link" target="_blank" rel="noopener noreferrer" data-i18n="btn.open">Open</a>
             </div>
           </article>
         </div>
@@ -68,8 +99,8 @@
 
     <section class="about-section" id="about">
       <div class="main-container">
-        <h2 class="block-title">About</h2>
-        <p class="about-text">A landing page for access to all built services. The list will grow as new projects are added.</p>
+        <h2 class="block-title" data-i18n="section.about">About</h2>
+        <p class="about-text" data-i18n="about.text">A central hub for DimKava tools and applications. Education, price monitoring, sales analytics, order sync — all in one place. Additional services (Telegram bots for B2B tracking, employee bonuses) run in the background without direct links.</p>
       </div>
     </section>
   </main>
@@ -79,5 +110,6 @@
       <p class="footer-text">&copy; DimKava</p>
     </div>
   </footer>
+  <script src="i18n.js"></script>
 </body>
 </html>
