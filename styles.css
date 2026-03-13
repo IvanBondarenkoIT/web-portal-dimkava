@@ -1,7 +1,12 @@
-/* DimKava Portal — styles from blaser-site-stile-copyist */
+/* DimKava Portal — mobile-first, styles from blaser-site-stile-copyist */
 
 /* === Design tokens (from blaser-templates) === */
 :root {
+  /* Breakpoints: use in min-width media queries only */
+  --bp-xs: 600px;
+  --bp-sm: 768px;
+  --bp-md: 1024px;
+  --bp-lg: 1200px;
   --color-text: #232323;
   --color-text-muted: #706f6f;
   --color-heading: #000;
@@ -39,6 +44,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -46,6 +55,7 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background: var(--color-background);
+  min-width: 0;
 }
 
 ul, ol {
@@ -72,13 +82,13 @@ h1, .lead-in-headline {
   margin: 0 0 0.5em;
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-sm)) {
   h1, .lead-in-headline {
     font-size: 1.75rem;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: var(--bp-lg)) {
   h1, .lead-in-headline {
     font-size: 2rem;
   }
@@ -91,13 +101,13 @@ h2, .block-title {
   margin: 0 0 0.5em;
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-sm)) {
   h2, .block-title {
     font-size: 1.5rem;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: var(--bp-lg)) {
   h2, .block-title {
     font-size: 1.625rem;
   }
@@ -111,26 +121,40 @@ h3, .service-title {
   margin: 0 0 0.25em;
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-sm)) {
   h3, .service-title {
     font-size: 1.125rem;
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: var(--bp-lg)) {
   h3, .service-title {
     font-size: 1.25rem;
   }
 }
 
-/* === Layout === */
+/* === Layout (mobile-first) === */
 .main-container {
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-/* === Header === */
+@media (min-width: var(--bp-sm)) {
+  .main-container {
+    padding: 0 1.25rem;
+  }
+}
+
+@media (min-width: var(--bp-lg)) {
+  .main-container {
+    max-width: 1400px;
+    padding: 0 2rem;
+  }
+}
+
+/* === Header (mobile-first) === */
 .header-top-wrapper {
   border-bottom: 1px solid var(--color-border);
 }
@@ -140,8 +164,14 @@ h3, .service-title {
   align-items: center;
   justify-content: flex-end;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 0.5rem;
   padding: 0.5rem 0;
+}
+
+@media (min-width: var(--bp-sm)) {
+  .header-top {
+    gap: 1rem;
+  }
 }
 
 .lang-switcher {
@@ -171,34 +201,63 @@ h3, .service-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
   border-bottom: 2px solid var(--color-heading);
+}
+
+@media (min-width: var(--bp-sm)) {
+  .header-bottom-inner {
+    flex-wrap: nowrap;
+    padding: 1rem 0;
+  }
 }
 
 .site-logo {
   display: block;
+  flex-shrink: 0;
 }
 
 .logo-img {
-  max-height: 48px;
+  max-height: 36px;
   width: auto;
+  height: auto;
   vertical-align: middle;
+}
+
+@media (min-width: var(--bp-sm)) {
+  .logo-img {
+    max-height: 48px;
+  }
 }
 
 .menu {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   flex-wrap: wrap;
+}
+
+@media (min-width: var(--bp-sm)) {
+  .menu {
+    gap: 1rem;
+  }
 }
 
 .menu-item-link:hover {
   text-decoration: underline;
 }
 
-/* === Hero === */
+/* === Hero (mobile-first) === */
 .hero {
-  padding: var(--space-8) 0;
+  padding: var(--space-6) 0;
+}
+
+@media (min-width: var(--bp-sm)) {
+  .hero {
+    padding: var(--space-8) 0;
+  }
 }
 
 .hero-description {
@@ -206,37 +265,59 @@ h3, .service-title {
   font-size: 1rem;
   margin: 0;
   max-width: 40em;
+  overflow-wrap: break-word;
 }
 
-/* === Service cards (adapted from product-grid) === */
+/* === Service cards (mobile-first grid) === */
 .services-section {
-  padding: var(--space-8) 0;
+  padding: var(--space-6) 0;
+}
+
+@media (min-width: var(--bp-sm)) {
+  .services-section {
+    padding: var(--space-8) 0;
+  }
 }
 
 .service-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-6);
+  gap: var(--space-4);
 }
 
-@media (min-width: 768px) {
+@media (min-width: var(--bp-sm)) {
   .service-grid {
+    gap: var(--space-6);
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: var(--bp-md)) {
   .service-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: var(--bp-lg)) {
+  .service-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
   }
 }
 
 .service-card {
   background: var(--color-background-alt);
   border: 1px solid var(--color-border);
-  padding: var(--space-6);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
+  min-width: 0;
+}
+
+@media (min-width: var(--bp-sm)) {
+  .service-card {
+    padding: var(--space-6);
+  }
 }
 
 .service-card-content {
@@ -258,9 +339,10 @@ h3, .service-title {
   font-size: 0.9375rem;
   margin: var(--space-2) 0 var(--space-4);
   flex: 1;
+  overflow-wrap: break-word;
 }
 
-/* === Buttons (from blaser components) === */
+/* === Buttons (touch-friendly on mobile) === */
 .button,
 .button--primary {
   font-family: var(--font-heading-alt);
@@ -268,8 +350,11 @@ h3, .service-title {
   background: var(--color-button-primary-bg);
   color: var(--color-button-primary);
   border: 1px solid var(--color-button-primary-bg);
-  padding: 0.5em 1em;
-  display: inline-block;
+  padding: 0.625em 1em;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: fit-content;
 }
 
@@ -289,22 +374,36 @@ h3, .service-title {
   margin-top: auto;
 }
 
-/* === About === */
+/* === About (mobile-first) === */
 .about-section {
-  padding: var(--space-8) 0;
+  padding: var(--space-6) 0;
+}
+
+@media (min-width: var(--bp-sm)) {
+  .about-section {
+    padding: var(--space-8) 0;
+  }
 }
 
 .about-text {
   color: var(--color-text);
   margin: 0;
   max-width: 50em;
+  overflow-wrap: break-word;
 }
 
-/* === Footer === */
+/* === Footer (mobile-first) === */
 .footer {
-  margin-top: 3rem;
-  padding: var(--space-8) 0;
+  margin-top: var(--space-8);
+  padding: var(--space-6) 0;
   border-top: 1px solid var(--color-border);
+}
+
+@media (min-width: var(--bp-sm)) {
+  .footer {
+    margin-top: 3rem;
+    padding: var(--space-8) 0;
+  }
 }
 
 .footer-text {
