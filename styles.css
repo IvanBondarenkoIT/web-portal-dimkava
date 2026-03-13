@@ -70,6 +70,7 @@ a {
 }
 
 a:hover {
+  color: #B5DC79;
   text-decoration: underline;
 }
 
@@ -245,7 +246,12 @@ h3, .service-title {
   }
 }
 
+.menu-item-link {
+  color: var(--color-heading);
+}
+
 .menu-item-link:hover {
+  color: #B5DC79;
   text-decoration: underline;
 }
 
@@ -306,8 +312,8 @@ h3, .service-title {
 }
 
 .service-card {
-  background: var(--color-background-alt);
-  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  border: 1px solid var(--color-heading);
   padding: var(--space-4);
   display: flex;
   flex-direction: column;
@@ -331,6 +337,7 @@ h3, .service-title {
 }
 
 .service-title a:hover {
+  color: #B5DC79;
   text-decoration: underline;
 }
 
